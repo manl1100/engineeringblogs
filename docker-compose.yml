@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+
+  web:
+    image: web
+    ports:
+     - "3000:3000"
+
+  server:
+    image: server
+    ports:
+     - "8888:8888"
+     
+  redis:
+    image: "redis:alpine"
