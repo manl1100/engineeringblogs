@@ -1,4 +1,4 @@
 #! /bin/bash
 
-docker build --no-cache -t web -f frontend
-docker build --no-cache -t server -f server
+docker build frontend -t web --no-cache
+docker build server -t server --no-cache
