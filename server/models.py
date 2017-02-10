@@ -1,5 +1,4 @@
 from index import db
-import datetime
 
 
 class Blog(db.Model):
@@ -8,3 +7,6 @@ class Blog(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String)
+
+    def __init__(self, title):
+        self.title = title
