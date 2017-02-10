@@ -3,14 +3,17 @@ version: '2'
 services:
 
   web:
-    image: web
+    build: frontend
     ports:
      - "3000:3000"
 
   server:
-    image: server
+    build: server
     ports:
      - "8888:8888"
-     
+
+  db:
+    image: postgres
+
   redis:
     image: "redis:alpine"
