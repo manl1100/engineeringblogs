@@ -8,11 +8,16 @@ services:
      - "3000:3000"
 
   server:
+    env_file: .env
     build: server
     ports:
      - "8888:8888"
+    links:
+    - postgres:postgres
+    volumes:
+    - ./server:/code
 
-  db:
+  postgres:
     image: postgres
 
   redis:
