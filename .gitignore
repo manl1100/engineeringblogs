@@ -17,3 +17,5 @@ npm-debug.log
 #python
 *.py[cod]
 *$py.class
+
+.env
