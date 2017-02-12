@@ -10,3 +10,14 @@ class Blog(db.Model):
 
     def __init__(self, title):
         self.title = title
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+        }
+
+    def __repr__(self):
+        return '<Blog %r>' % (self.title)
+
+db.create_all()
