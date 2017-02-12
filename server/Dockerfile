@@ -8,14 +8,18 @@ RUN set -x && apt-get update && DEBIAN_FRONTEND=noninteractive \
         curl \
         git \
         npm \
-        python-pip
+        python3 \
+        python3-dev \
+        python3-pip \
+        libpq-dev \ 
+        build-essential
 
 
 ADD . /code
 WORKDIR /code
 
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
-ENTRYPOINT ["python"]
+ENTRYPOINT ["python3"]
 
 CMD ["app.py"]
