@@ -15,12 +15,12 @@ services:
     ports:
      - "8888:8888"
     links:
-    - postgres:postgres
+    - db:db
     volumes:
     - ./server:/code
 
-  postgres:
-    image: postgres
+  db:
+    image: mysql
 
   redis:
     image: "redis:alpine"
