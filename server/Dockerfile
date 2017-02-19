@@ -11,8 +11,15 @@ RUN set -x && apt-get update && DEBIAN_FRONTEND=noninteractive \
         python3 \
         python3-dev \
         python3-pip \
-        libpq-dev \ 
-        build-essential
+        build-essential \
+        libmysqlclient-dev \
+        libxml2-dev \ 
+        libxslt-dev \
+        libssl-dev \
+        libffi-dev \
+        g++
+
+
 
 
 ADD . /code

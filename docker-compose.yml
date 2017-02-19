@@ -20,6 +20,7 @@ services:
     - ./server:/code
 
   db:
+    env_file: .env
     image: mysql
 
   redis:
