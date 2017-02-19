@@ -11,8 +11,8 @@
 
 BOT_NAME = 'engineeringblogs'
 
-SPIDER_MODULES = ['engineeringblogs.spiders']
-NEWSPIDER_MODULE = 'engineeringblogs.spiders'
+SPIDER_MODULES = ['scraper.spiders']
+NEWSPIDER_MODULE = 'scraper.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -62,7 +62,7 @@ NEWSPIDER_MODULE = 'engineeringblogs.spiders'
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'engineeringblogs.pipelines.EngineeringblogsPipeline': 300,
+    'scraper.pipelines.EngineeringblogsPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
