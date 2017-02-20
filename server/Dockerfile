@@ -19,14 +19,7 @@ RUN set -x && apt-get update && DEBIAN_FRONTEND=noninteractive \
         libffi-dev \
         g++
 
-
-
-
 ADD . /code
 WORKDIR /code
 
 RUN pip3 install -r requirements.txt
-
-ENTRYPOINT ["python3"]
-
-CMD ["app.py"]
