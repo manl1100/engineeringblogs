@@ -18,10 +18,12 @@ services:
     - db:db
     volumes:
     - ./server:/code
+    command: "python3 manage.py runserver"
 
   db:
     env_file: .env
     image: mysql
+    restart: always
 
   redis:
     image: "redis:alpine"
