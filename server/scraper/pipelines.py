@@ -6,7 +6,8 @@ from models import Blog
 class EngineeringblogsPipeline(object):
 
     def process_item(self, item, spider):
-
-        import pdb
-        pdb.set_trace()
+        blog = Blog(item['title'], item['company'],
+                    item['url'], item['thumbnail'])
+        db.session.add(blog)
+        db.session.commit()
         return item
