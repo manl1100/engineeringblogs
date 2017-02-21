@@ -7,7 +7,9 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 app.config.from_object(BaseConfig)
+
 db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+import models
+
 api = Api(app)
 CORS(app)

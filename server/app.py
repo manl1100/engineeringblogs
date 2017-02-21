@@ -1,7 +1,8 @@
-from index import app, db, api
-from flask import Flask, jsonify, request
+from index import api, app, db
+from flask import Flask, jsonify
 from flask_restful import Resource, reqparse
 from models import Blog
+
 
 parser = reqparse.RequestParser()
 parser.add_argument('title')
@@ -22,7 +23,3 @@ class EngineeringBlog(Resource):
 
 
 api.add_resource(EngineeringBlog, '/blogs')
-
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8888)

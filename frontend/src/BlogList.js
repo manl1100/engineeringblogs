@@ -6,8 +6,8 @@ class BlogList extends Component {
 	constructor(props) {
 	    super(props);
 	    this.state = {
-	      blogs: []
-	    };
+	    	blogs: []
+	    }
   	}
 
 	componentWillMount() {
@@ -17,7 +17,7 @@ class BlogList extends Component {
 		  method: 'GET',
 		  headers: myHeaders,
 		  cache: 'default'
-	};
+		};
 
 	fetch('http://localhost:8888/blogs', myInit)
 	  .then((response) => {
@@ -27,7 +27,7 @@ class BlogList extends Component {
 	    }
 
 	    response.json().then((response) => {
-	      this.setState({ blogs: response.data })  
+	      this.setState({ blogs: response.blogs })  
 	    }); 
 	  })
 	  .catch((err) => {
@@ -35,12 +35,18 @@ class BlogList extends Component {
 	  })
 	}
 
+	getInitialState() {
+		return {
+			blogs: []
+		};
+	}
+
 	render() {
 		return (
 			<Item.Group divided link>
 				{this.state.blogs.map(function(blog) {
 		              return (
-		              	<Item href={blog.url}>
+		              	<Item href={blog.url} key={blog.id}>
 		              		<Item.Image size='large' src={blog.thumbnail}/>
 		              		<Item.Content verticalAlign='middle'>
 		              			<Item.Header as='a'>{blog.title}</Item.Header>

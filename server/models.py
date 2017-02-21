@@ -21,9 +21,10 @@ class Blog(db.Model):
         return {
             'id': self.id,
             'title': self.title,
+            'company': self.company,
+            'url': self.url,
+            'thumbnail': self.thumbnail,
         }
 
     def __repr__(self):
         return '<Blog %r>' % (self.title)
-
-db.create_all()
