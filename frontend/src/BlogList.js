@@ -27,7 +27,7 @@ class BlogList extends Component {
 	    }
 
 	    response.json().then((response) => {
-	      this.setState({ blogs: response.blogs })  
+	      this.setState({ blogs: response })  
 	    }); 
 	  })
 	  .catch((err) => {
