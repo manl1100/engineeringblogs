@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Item } from 'semantic-ui-react'
+import { Card, Icon, Image } from 'semantic-ui-react'
+import './BlogList.css';
 
 class BlogList extends Component {
 
@@ -43,24 +44,28 @@ class BlogList extends Component {
 
 	render() {
 		return (
-			<Item.Group divided link>
+			<Card.Group>
 				{this.state.blogs.map(function(blog) {
-		              return (
-		              	<Item href={blog.url} key={blog.id}>
-		              		<Item.Image size='large' src={blog.thumbnail}/>
-		              		<Item.Content verticalAlign='middle'>
-		              			<Item.Header as='a'>{blog.title}</Item.Header>
-		              			<Item.Meta>
-		              				<Item.Description>{blog.company}</Item.Description>
-		              			</Item.Meta>
-		              			<Item.Extra>Additional Details</Item.Extra>
-		              		</Item.Content>
-		              	</Item>
-		              )
-	          	})}
-		    </Item.Group>
-	    )
-	}
+					return (
+						<Card href={blog.url} key={blog.id}>
+					    	<Image className="thumbnail" src={blog.thumbnail} />
+						    <Card.Content>
+						      <Card.Header>
+						        {blog.title}
+						      </Card.Header>
+						      <Card.Meta>
+						        <span className='date'>
+						          {blog.company}
+						        </span>
+						      </Card.Meta>
+						      <Card.Description>
+						      </Card.Description>
+						    </Card.Content>
+					  	</Card>
+					  	)
+				})}
+			</Card.Group>)
+		}
 }
 
 export default BlogList
