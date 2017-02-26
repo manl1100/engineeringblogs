@@ -47,7 +47,7 @@ class BlogList extends Component {
 			<Card.Group>
 				{this.state.blogs.map(function(blog) {
 					return (
-						<Card className="flat" href={blog.url} key={blog.id}>
+						<Card centered className="flat" href={blog.url} key={blog.id}>
 					    	<Image className="thumbnail" src={blog.thumbnail} />
 						    <Card.Content>
 						      <Card.Header>
