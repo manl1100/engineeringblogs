@@ -1,5 +1,11 @@
-img {
-	width: 290px;
+.ui.cards>.card.flat img {
+  	width: 290px;
 	height: 150px;
 	object-fit: cover;
+	border-radius: 0px !important;
+}
+
+.ui.cards a.card:hover {
+	box-shadow: none;
+	-webkit-transform: none;
 }

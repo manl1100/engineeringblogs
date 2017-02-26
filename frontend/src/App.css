@@ -1,4 +1,6 @@
-
+#root {
+  background-color: #F4F7F6;
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -20,6 +22,11 @@
   margin-top: 50px;
   margin-left: 200px;
   margin-right: 200px;
+}
+
+.ui.card.flat {
+  border-radius: 0px;
+  box-shadow: none;
 }
 
 @keyframes App-logo-spin {
