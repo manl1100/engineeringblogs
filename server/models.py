@@ -17,14 +17,5 @@ class Blog(db.Model):
         self.url = url
         self.thumbnail = thumbnail
 
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'title': self.title,
-            'company': self.company,
-            'url': self.url,
-            'thumbnail': self.thumbnail,
-        }
-
     def __repr__(self):
         return '<Blog %r>' % (self.title)
